@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SolveActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="10+5"
+        android:textSize="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/problemTextView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/solutionEdit"
+        android:hint="Введите решение..."
+        app:layout_constraintTop_toBottomOf="@id/problemTextView" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:textSize="20dp"
+        android:text="Проверить"
+        app:layout_constraintTop_toBottomOf="@id/solutionEdit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="onCheckClick"
+        android:id="@+id/checkButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
