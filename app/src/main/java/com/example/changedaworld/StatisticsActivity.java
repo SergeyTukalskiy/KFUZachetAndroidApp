@@ -44,10 +44,15 @@ public class StatisticsActivity extends AppCompatActivity {
 
         userCursor = db.rawQuery("select avg(" + DatabaseHelper.COLUMN_ISCORRECT + ") from " + DatabaseHelper.TABLE, null);
         userCursor.moveToFirst();
-        double stat = Double.parseDouble(userCursor.getString(0)) * 100;
-        String formattedDouble = new DecimalFormat("#0.00").format(stat);
-        formattedDouble += "%";
-        percentage.setText(formattedDouble);
+        String parse = userCursor.getString(0);
+        if (parse != null) {
+            double stat = Double.parseDouble(parse) * 100;
+            String formattedDouble = new DecimalFormat("#0.00").format(stat);
+            formattedDouble += "%";
+            percentage.setText(formattedDouble);
+        } else {
+            percentage.setText("Нет данных");
+        }
 
     }
 
